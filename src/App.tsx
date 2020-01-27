@@ -1,39 +1,32 @@
-import React from "react";
+import React, { FunctionComponent, useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
-} from "react-router-dom";
+  generatePath} from "react-router-dom";
 import Home from "./pages/home";
 import Works from './pages/works';
 import About from './pages/about';
+import LeftSidebar from './components/leftSidebar';
+import Nav from './components/nav'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import BetterLeftSidebar from './components/betterLeftSidebar'
+import './css/hamburgers.css';
 
-export default function SinglePageApplication() {
+export const SinglePageApplication: React.FC = () => {
+  const [leftSidebarOpen, setLeftSidebarOpen] = useState(false);
+
   return (
+    <>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossOrigin="anonymous"
+    />
     <Router>
-      <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/works">Works</Link>
-          </li>
-        </ul>
-
-        <hr />
-
-        {/*
-          A <Switch> looks through all its children <Route>
-          elements and renders the first one whose path
-          matches the current URL. Use a <Switch> any time
-          you have multiple routes, but you want only one
-          of them to render at a time
-        */}
+      <Nav setLeftSidebarOpen={setLeftSidebarOpen} leftSidebarIsOpen={leftSidebarOpen}></Nav>
+      <LeftSidebar open={leftSidebarOpen}>
         <Switch>
           <Route exact path="/">
             <Home />
@@ -45,7 +38,8 @@ export default function SinglePageApplication() {
             <Works />
           </Route>
         </Switch>
-      </div>
+        </LeftSidebar>
     </Router>
+    </>
   );
 }

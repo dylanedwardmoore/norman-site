@@ -1,6 +1,6 @@
 import React from "react";
-import Carousel from '../components/carousel';
-import { CarouselContentAndControls } from '../components/types'
+import Carousel from '../components/common/carousel';
+import { CarouselContentAndControls } from '../components/common/types'
 
 export default function Home() {
   const carouselContent: CarouselContentAndControls = { 
@@ -10,12 +10,12 @@ export default function Home() {
     carouselObjects: [
       {
         src: {
-          url: "https://www.robinwieruch.de/static/95d994995c6d40027b037bb9cf65e7c6/426ce/banner.jpg"
+          url: "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/il/ios12-product-lockup-callout.png"
         },
         alt: "image 1",
         type: "ImageAttachmentType",
         title: {
-          text: "image 1",
+          text: "hkjkhhjkjklljkjklhimage 1",
         },
         subtitle: {
           text: "image 1 subtitle"
@@ -24,12 +24,12 @@ export default function Home() {
       },
       {
         src: {
-          url: "https://www.robinwieruch.de/static/95d994995c6d40027b037bb9cf65e7c6/426ce/banner.jpg"
+          url: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MRXJ2?wid=532&hei=582&fmt=png-alpha&.v=1551489675083"
         },
         alt: "image 2",
         type: "ImageAttachmentType",
         title: {
-          text: "image 12",
+          text: "kjljjlimage 12",
         },
         subtitle: {
           text: "image 1 2subtitle"
@@ -38,7 +38,7 @@ export default function Home() {
       },
       {
         src: {
-          url: "https://www.robinwieruch.de/static/95d994995c6d40027b037bb9cf65e7c6/426ce/banner.jpg"
+          url: "https://image.shutterstock.com/image-vector/realistic-apples-vector-260nw-1062722954.jpg"
         },
         alt: "image 2",
         type: "ImageAttachmentType",
@@ -54,9 +54,9 @@ export default function Home() {
   }
 
   return (
-    <div>
+    <>
       <Carousel carousel={carouselContent}></Carousel>
       <h2>Home</h2>
-    </div>
+    </>
   );
 }

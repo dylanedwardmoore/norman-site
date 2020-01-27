@@ -47,3 +47,6 @@ export type CarouselContentAndControls = {
   showIndicators: boolean,
   activeItemIndex: number
 }
+
+export type SidebarContentAndOptions = {
+}

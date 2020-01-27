@@ -10,7 +10,7 @@ type CarouselProps = {
  
 export const CarouselPage: FunctionComponent<CarouselProps> = ({carousel}) =>
   (
-  <MDBContainer>
+  <>
     <MDBCarousel
     activeItem={carousel.activeItemIndex}
     length={carousel.carouselObjects.length }
@@ -26,7 +26,7 @@ export const CarouselPage: FunctionComponent<CarouselProps> = ({carousel}) =>
       }
     </MDBCarouselInner>
   </MDBCarousel>
-  </MDBContainer>
+  </>
   )
 
 function carouselItemFromObject(item: CarouselObjectWithOverlay, index: number) {
@@ -47,6 +47,7 @@ function carouselItemFromObject(item: CarouselObjectWithOverlay, index: number) 
 }
 
 function imageCarouselItemInternals(imageItem: ImageAttachment, overlayShade: string) {
+  console.log(imageItem.src.url)
   return (
     <MDBView>
       <img
