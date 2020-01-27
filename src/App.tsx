@@ -17,7 +17,7 @@ export const SinglePageApplication: React.FC = () => {
   const [leftSidebarOpen, setLeftSidebarOpen] = useState(false);
 
   return (
-    <>
+    <div>
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -40,6 +40,6 @@ export const SinglePageApplication: React.FC = () => {
         </Switch>
         </LeftSidebar>
     </Router>
-    </>
+    </div>
   );
 }

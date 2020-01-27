@@ -22,6 +22,8 @@ const MainNavbar: React.FC<MainNavbarProps> = (props) => {
         </div>
       </div>
       </Navbar.Brand>
+      <div>
+      </div>
     </Container>
     </Navbar>
     </>
