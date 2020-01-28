@@ -14,6 +14,8 @@ import BetterLeftSidebar from './components/betterLeftSidebar'
 import './css/hamburgers.css';
 import './css/sidebar.css';
 import './css/navbar.css';
+import './css/burgerStyles.css';
+import Example from "./components/betterLeftSidebar";
 
 
 export const SinglePageApplication: React.FC = () => {
@@ -21,13 +23,7 @@ export const SinglePageApplication: React.FC = () => {
 
   return (
     <div>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossOrigin="anonymous"
-    />
-    <Router>
+      <Router>
       <Nav setLeftSidebarOpen={setLeftSidebarOpen} leftSidebarIsOpen={leftSidebarOpen}></Nav>
       <LeftSidebar open={leftSidebarOpen}>
         <Switch>
@@ -42,7 +38,7 @@ export const SinglePageApplication: React.FC = () => {
           </Route>
         </Switch>
         </LeftSidebar>
-    </Router>
+        </Router>
     </div>
   );
 }

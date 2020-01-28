@@ -12,10 +12,7 @@ const menuIsOpen: (isOpen: boolean) => string = (isOpen) => {
 const MainNavbar: React.FC<MainNavbarProps> = (props) => {
   return (
     <>
-    <div className="navbar">
-    <link rel="stylesheet" href="css/hamburgers.css" />
-    <Navbar sticky="top" expand="md" fixed="top" bg="dark" variant="dark">
-    <Container>
+    <Navbar className="navbar" sticky="top" expand="md" fixed="top" bg="dark" variant="dark">
       <Navbar.Brand onClick={() => {props.setLeftSidebarOpen(!props.leftSidebarIsOpen)}}>
       <div className={"hamburger hamburger--arrow " + menuIsOpen(props.leftSidebarIsOpen)}>
         <div className="hamburger-box">
@@ -23,11 +20,7 @@ const MainNavbar: React.FC<MainNavbarProps> = (props) => {
         </div>
       </div>
       </Navbar.Brand>
-      <div>
-      </div>
-    </Container>
     </Navbar>
-    </div>
     </>
   );
 }

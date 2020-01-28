@@ -17,12 +17,12 @@ class App extends React.Component<LeftSidebarProps, SidebarState> {
     this.setState({
       sidebarOpen: true
     });
-    this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
+    // this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
   }
 
-  onSetSidebarOpen(open: boolean) {
-    this.setState({ sidebarOpen: open });
-  }
+  // onSetSidebarOpen(open: boolean) {
+  //   this.setState({ sidebarOpen: open });
+  // }
 
   render() {
     const sidebarContent = (
@@ -49,10 +49,8 @@ class App extends React.Component<LeftSidebarProps, SidebarState> {
     return (
       <Sidebar
         sidebar={sidebarContent}
-        open={this.props.open}
-        onSetOpen={this.onSetSidebarOpen}
-        styles={styles}
-      >
+        docked={this.props.open}
+        styles={styles}>
         {this.props.children}
       </Sidebar>
     );
