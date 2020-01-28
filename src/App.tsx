@@ -12,6 +12,9 @@ import Nav from './components/nav'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import BetterLeftSidebar from './components/betterLeftSidebar'
 import './css/hamburgers.css';
+import './css/sidebar.css';
+import './css/navbar.css';
+
 
 export const SinglePageApplication: React.FC = () => {
   const [leftSidebarOpen, setLeftSidebarOpen] = useState(false);
