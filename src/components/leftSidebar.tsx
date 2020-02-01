@@ -1,6 +1,12 @@
 import React from "react";
 import Sidebar from "react-sidebar";
 import Nav from 'react-bootstrap/Nav'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 type SidebarState = {
     sidebarOpen: boolean
@@ -28,9 +34,9 @@ class App extends React.Component<LeftSidebarProps, SidebarState> {
     const sidebarContent = (
       <div className="sidebar">
         <Nav defaultActiveKey="/home" className="flex-column">
-          <Nav.Link href="/">Active</Nav.Link>
-          <Nav.Link href="/works">Works</Nav.Link>
-          <Nav.Link href="/about">About</Nav.Link>
+          <Nav.Link ><Link to="/">Active</Link></Nav.Link>
+          <Nav.Link ><Link to="/works">Works</Link></Nav.Link>
+          <Nav.Link ><Link to="/about">About</Link></Nav.Link>
         </Nav>
       </div>
       )
@@ -42,7 +48,8 @@ class App extends React.Component<LeftSidebarProps, SidebarState> {
           padding: 8
         },
         content: {
-          padding: "16px"
+          overflow: "hidden",
+          padding: "1px"
         }
       };
 

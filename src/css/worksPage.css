@@ -1,0 +1,55 @@
+.worksPageContainer {
+  padding-top: 25px;
+}
+
+.worksLeftcol {
+ overflow-y: scroll;
+}
+
+.activeWorksMenuItem {
+  font-weight: bold;
+}
+
+.worksTimelineActive {
+  width: 30px;
+  height: 5px;
+  background-color: green;
+}
+
+.worksRightcol {
+ padding-top: 10px;
+ overflow:hidden;
+}
+
+.center-table-cell {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.work-timeline {
+  list-style: none;
+}
+.work-timeline >li {
+  position: relative;
+}
+.work-timeline>li:before {
+  content: '\25CF';
+  margin-right: 10px;
+  font-size: 20px;
+}
+.work-timeline>li:after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: '';
+  border-left: 2px solid black;
+  margin-left: 5px;
+  height: 100%;
+}
+.work-timeline >li:first-of-type:after {
+  top: 50%;
+}
+.work-timeline >li:last-of-type:after {
+  top: -50%;
+}

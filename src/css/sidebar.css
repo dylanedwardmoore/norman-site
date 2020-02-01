@@ -13,12 +13,12 @@
   text-decoration: none;
 }
  
-.sidebar a.active {
+.sidebar Link.active {
   background-color: #4CAF50;
   color: white;
 }
 
-.sidebar a:hover:not(.active) {
+.sidebar Link:hover:not(.active) {
   background-color: #555;
   color: white;
 }

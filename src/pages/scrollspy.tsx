@@ -1,15 +1,22 @@
 import React from 'react';
 import classNames from 'classnames'
+import { Nav, Row, Col } from 'react-bootstrap';
 
-const SPY_INTERVAL = 100;
+const SPY_INTERVAL = 10;
+
+export type ScrollspyMenuItem = {
+  id: string,
+  displayText: string, 
+}
 
 interface SpyItem {
   inView: boolean;
   element: HTMLElement;
+  displayName: string;
 }
 
  interface ScrollspyProps {
-  ids: string[];
+  menuItems: ScrollspyMenuItem[];
   offset: number;
   itemContainerClassName?: string;
   activeItemClassName?: string;
@@ -62,12 +69,13 @@ class Scrollspy extends React.Component<ScrollspyProps, ScrollspyState> {
   }
 
   private spy() {
-    const items = this.props.ids
-      .map(id => {
-        const element = document.getElementById(id);
+    const items = this.props.menuItems
+      .map(item => {
+        const element = document.getElementById(item.id);
         if (element) {
           return {
             inView: this.isInView(element),
+            displayName: item.displayText,
             element
           } as SpyItem;
         } else {
@@ -96,10 +104,11 @@ class Scrollspy extends React.Component<ScrollspyProps, ScrollspyState> {
       itemClassName
     } = this.props;
     return (
-      <ul className={classNames(itemContainerClassName)}>
+      <Nav className={classNames(itemContainerClassName) + " flex-column"}>
         {this.state.items.map((item, k) => {
           return (
-            <li
+            <Row><Col>
+            <Nav.Link
               className={classNames(
                 itemClassName,
                 item.inView ? activeItemClassName : null
@@ -109,11 +118,16 @@ class Scrollspy extends React.Component<ScrollspyProps, ScrollspyState> {
                 this.scrollTo(item.element);
               }}
             >
-              {item.element.innerText}
-            </li>
+              {item.displayName}
+            </Nav.Link>
+            </Col>
+            <Col>
+            <div className="worksTimelineActive"></div>
+            </Col>
+            </Row>
           );
         })}
-      </ul>
+      </Nav>
     );
   }
 }

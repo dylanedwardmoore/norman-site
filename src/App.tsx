@@ -15,6 +15,9 @@ import './css/hamburgers.css';
 import './css/sidebar.css';
 import './css/navbar.css';
 import './css/burgerStyles.css';
+import './css/worksPage.css';
+import './css/image.css';
+import './css/general.css';
 import Example from "./components/betterLeftSidebar";
 
 
@@ -26,7 +29,7 @@ export const SinglePageApplication: React.FC = () => {
       <Router>
       <Nav setLeftSidebarOpen={setLeftSidebarOpen} leftSidebarIsOpen={leftSidebarOpen}></Nav>
       <LeftSidebar open={leftSidebarOpen}>
-        <Switch>
+        <Switch >
           <Route exact path="/">
             <Home />
           </Route>
