@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useState } from "react";
-import Card from 'react-bootstrap/Card'
+import {Image, Row, Col} from 'react-bootstrap'
 import ListGroupItem from 'react-bootstrap/ListGroupItem'
 import ListGroup from 'react-bootstrap/ListGroup'
 
@@ -12,21 +12,23 @@ export type ArtworkCardProps = {
 
 const ArtworkCard: React.FC<ArtworkCardProps> = (props) => {
  return (
-   <section id={props.id} style={{ paddingTop: '20px' }}>
-  <Card>
-  <Card.Img className="fitImage" style={{maxHeight: '30rem'}} src={props.imageSrc} />
-  <Card.Body>
-    <Card.Title>{props.cardText}</Card.Title>
-    <Card.Text>
+   <section id={props.id}>
+  <Row>
+    <Col xs={6}>
+  <Image fluid className="fitImage" style={{height: "700px" }}src={props.imageSrc} />
+  </Col>
+  <Col xs={6}>
+    <div className="centerParent">
+      <div className="centerChild">
+    <h3>{props.cardText}</h3>
+    <p>
       Some quick example text to build on the card title and make up the bulk of
       the card's content.
-    </Card.Text>
-  </Card.Body>
-  <Card.Body>
-    <Card.Link href="#">Card Link</Card.Link>
-    <Card.Link href="#">Another Link</Card.Link>
-  </Card.Body>
-</Card>
+    </p>
+    </div>
+    </div>
+    </Col>
+</Row>
   </section>
 )
 }

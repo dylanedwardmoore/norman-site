@@ -5,51 +5,29 @@
 .worksLeftcol {
  overflow-y: scroll;
 }
-
-.activeWorksMenuItem {
+.works-timeline > li:hover {
+  text-decoration: underline;
+}
+.activeWorksMenuItem > a{
+  font-size: large;
   font-weight: bold;
 }
-
-.worksTimelineActive {
-  width: 30px;
-  height: 5px;
-  background-color: green;
+.works-timeline > li{
+  height: 30px;
 }
-
-.worksRightcol {
- padding-top: 10px;
- overflow:hidden;
-}
-
-.center-table-cell {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.work-timeline {
-  list-style: none;
-}
-.work-timeline >li {
-  position: relative;
-}
-.work-timeline>li:before {
-  content: '\25CF';
-  margin-right: 10px;
-  font-size: 20px;
-}
-.work-timeline>li:after {
+/* .works-timeline > li:before {
+  content: "";
   position: absolute;
   left: 0;
-  top: 0;
-  content: '';
-  border-left: 2px solid black;
-  margin-left: 5px;
-  height: 100%;
-}
-.work-timeline >li:first-of-type:after {
-  top: 50%;
-}
-.work-timeline >li:last-of-type:after {
-  top: -50%;
-}
+  top: 0.21em;
+  bottom: 0.21em;
+  width: 1em;
+  background: linear-gradient(
+    to bottom, 
+    black, black 20%, 
+    white 20%, white 40%, 
+    black 40%, black 60%, 
+    white 60%, white 80%, 
+    black 80%, black 100%
+  );
+} */

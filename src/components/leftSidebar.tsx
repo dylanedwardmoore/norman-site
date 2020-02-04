@@ -48,7 +48,6 @@ class App extends React.Component<LeftSidebarProps, SidebarState> {
           padding: 8
         },
         content: {
-          overflow: "hidden",
           padding: "1px"
         }
       };

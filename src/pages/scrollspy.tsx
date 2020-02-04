@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames'
 import { Nav, Row, Col } from 'react-bootstrap';
 
-const SPY_INTERVAL = 10;
+const SPY_INTERVAL = 3;
 
 export type ScrollspyMenuItem = {
   id: string,
@@ -104,30 +104,25 @@ class Scrollspy extends React.Component<ScrollspyProps, ScrollspyState> {
       itemClassName
     } = this.props;
     return (
-      <Nav className={classNames(itemContainerClassName) + " flex-column"}>
+      <ul className={classNames(itemContainerClassName) + " flex-column works-timeline"}>
         {this.state.items.map((item, k) => {
           return (
-            <Row><Col>
-            <Nav.Link
-              className={classNames(
-                itemClassName,
-                item.inView ? activeItemClassName : null
-              )}
-              key={k}
+            <li className={classNames(
+              itemClassName,
+              item.inView ? activeItemClassName : null
+            ) + " timelineNavItem"}
+            key={k}>
+              <a
               onClick={() => {
                 this.scrollTo(item.element);
               }}
             >
               {item.displayName}
-            </Nav.Link>
-            </Col>
-            <Col>
-            <div className="worksTimelineActive"></div>
-            </Col>
-            </Row>
+              </a>
+            </li>
           );
         })}
-      </Nav>
+      </ul>
     );
   }
 }

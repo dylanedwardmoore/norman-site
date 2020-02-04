@@ -1,9 +1,10 @@
 import React from "react";
-import Container from 'react-bootstrap/Container';
+import Carousel from '../components/common/carousel';
 import Scrollspy, { ScrollspyMenuItem } from './scrollspy';
 import ArtworkCard, { ArtworkCardProps } from '../components/ArtworkCard'
 import Card from 'react-bootstrap/Card'
 import Nav from 'react-bootstrap/Nav'
+import {carouselContent} from './home'
 import {Row, Col} from 'react-bootstrap'
 
  const artworkCardsContents: ArtworkCardProps[] = [
@@ -53,19 +54,19 @@ import {Row, Col} from 'react-bootstrap'
 const menuItems: ScrollspyMenuItem[] = [
   {
     id: "item-1",
-    displayText: "Item 1 is the first item",
+    displayText: "Item",
   },
   {
     id: "item-2",
-    displayText: "Item 2 the second",
+    displayText: "Itemthesecond",
   },
   {
     id: "item-3",
-    displayText: "Item 3",
+    displayText: "Item-3-is-is",
   },
   {
     id: "item-4",
-    displayText: "Item 4 is the best item on this list",
+    displayText: "Work1IsLit",
   },
 ]
 
@@ -73,23 +74,22 @@ export default function Works() {
   return (
     <>
     <div className="worksPageContainer full-height">
+    <Row>
+      <Col xs={12} className="worksLeftcol">
+      <Carousel carousel={carouselContent}></Carousel>
+      </Col>
+    </Row>
     <Row className="full-height">
       <Col xs sm className="full-height worksLeftcol">{generateArtworkCards(artworkCardsContents)}</Col>
     <Col className="d-none d-md-block" md={2}>
-    <table className="full-height" style={{marginLeft: "auto"}}>
-      <tbody>
-        <tr>
-          <td className="center-table-cell">
-            <h4>Timeline</h4>
-            <Scrollspy menuItems={menuItems}
-              itemContainerClassName="scrollSpyContainer"
-              activeItemClassName="activeWorksMenuItem"
-              itemClassName="spyItemClass"/> 
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    
+      <div className="centerParent">
+      <div className="centerChildRight">
+      <Scrollspy menuItems={menuItems}
+        itemContainerClassName="scrollSpyContainer"
+        activeItemClassName="activeWorksMenuItem"
+        itemClassName="spyItemClass"/> 
+        </div>
+        </div>
     </Col>
   </Row>   
     </div>
